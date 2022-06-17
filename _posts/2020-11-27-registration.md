@@ -16,13 +16,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 Consequat ac felis donec et odio. Non odio euismod lacinia at quis risus sed. At quis risus sed vulputate odio ut enim blandit. Hac habitasse platea dictumst vestibulum rhoncus est. Facilisi nullam vehicula ipsum a arcu cursus vitae congue. Consequat interdum varius sit amet. Nibh sit amet commodo nulla . Sed libero enim sed faucibus turpis. Malesuada pellentesque elit eget gravida. Viverra mauris in aliquam sem. Velit laoreet id donec ultrices tincidunt arcu non sodales. Bibendum est ultricies integer quis auctor elit sed. Volutpat ac tincidunt vitae semper quis lectus nulla at volutpat.
 
-{% quote metz2011nonrigid %}
 This is an example of a cited quote.
 Lorem ipsum dolor sit amet, consectetur adipisicing elit,
 sed do eiusmod tempor.
 
 Lorem ipsum dolor sit amet, consectetur adipisicing.
-{% endquote %}
 
 Suspendisse sed nisi lacus sed viverra tellus in. Cum sociis natoque penatibus et magnis . Facilisis gravida neque convallis a cras semper auctor. Metus vulputate eu scelerisque felis imperdiet proin fermentum leo. At tellus at urna condimentum mattis pellentesque id nibh tortor. Dictum non consectetur a erat nam at. Volutpat ac tincidunt vitae semper quis lectus nulla at volutpat. Neque sodales ut etiam sit amet nisl purus in mollis . Vulputate sapien nec sagittis aliquam. Diam sollicitudin tempor id eu nisl nunc mi ipsum faucibus. Justo donec enim diam vulputate ut pharetra sit. Eget dolor morbi non arcu risus quis varius quam.
 
@@ -37,4 +35,4 @@ Commodo elit at imperdiet dui accumsan. Tellus at urna condimentum mattis pellen
 
 <hr>
 
-{% bibliography --cited %}
+
