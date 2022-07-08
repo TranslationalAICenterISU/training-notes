@@ -1,7 +1,7 @@
 ---
-title: Containers - Introduction
-categories: containers
-tags: [containers,docker,singularity]
+title: How to use HPC Clusters - Basics
+categories: HPC
+tags: [HPC,linux,cluster,nova]
 maths: 1
 toc: 1
 ---
