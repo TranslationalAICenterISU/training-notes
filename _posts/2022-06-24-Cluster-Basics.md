@@ -58,7 +58,7 @@ toc: 1
 1. Go to the folder where you installed the virtual environment (alias could be used).
 2. Use < source bin/activate > to activate the virtual environment. If successfully activated, the environment name will pop up on your next command line as shown below. (”multimae” is the name of the virtual env).
     
-    ![Screen Shot 2022-07-01 at 11.10.47.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/85ee4a39-40f6-4da6-8632-37f94a8011d2/Screen_Shot_2022-07-01_at_11.10.47.png)
+    ![Screen Shot 2022-07-01 at 11.10.47.png](https://github.com/adityabalu/training-notes/raw/main/assets/img/command_prompt.png)
     
 3. You could also activate virtual environment from any location.                                             Use < source path/to/bin/activate >.
 4. Use < deactivate > to deactivate the virtual environment.
