@@ -1,0 +1,54 @@
+---
+title: Introduction to Git/Github - Basics
+categories: Git
+tags: [Github,Git,git commant]
+maths: 1
+toc: 1
+---
+
+{% include toc.html %}
+
+# How to add your training note to repository ?
+
+1. Go to https://github.com/TranslationalAICenterISU/training-notes/_post/
+2. Create new markdown file.
+3. Write the description in markdown format. 
+4. commit the changes.
+5. Go to the main folder "https://github.com/TranslationalAICenterISU/training-notes" and build the job. 
+6. Go to the main folder "https://github.com/TranslationalAICenterISU/training-notes", Click on Environment, github-pages. Check the deployment status to be completed. 
+7. With the use of **Jekyll** language this plain text can be converted to statistics website. [Jelyll](https://jekyllrb.com/)
+
+# How to install Jekyll?
+
+1. Go to the website: [Jekyll](https://jekyllrb.com/docs/installation/) and chose your operating system. 
+2. Follow the instruction. 
+3. Note that Jekyll uses **Ruby** language to craete a HTML from markdown file. 
+4. Images corresponds to markdown file can be uploaded into training-notes/assets/img/ and reference to the image in the markdown file.
+5. If you need to make any changes to a file, fork from the repository, apply your changes and then contribute/pul request. 
+ 
+
+# Github/Git terminologies:
+
+- **version control:** It keeps tracks of changes for the files added to a repository.
+- **commit:** We make a change and save it in version controll called commit. 
+- **clone:** transfering the remote a repository into the local. The diference of clone and download is the .gitignore and .git files that exist only in cloned folder. This file is responsible to keep track of all updates.
+- There are two types of repositories: **core** which is in the local and **remote** which is on Github. 
+- **git status:** shows all the changes that are not submitted yet. 
+- **git commit** we can finalize those changes. 
+- Visial Studio Code can be used inplace of github desktop as well.
+- Files can be transfered from local repository to remote repository with **push** and **pull** command. 
+- **push:** refered to transfering file from _local_ repository to _remove_ repository.
+- **pull:** refered to transfering file from _remove_ repository to _local_ repository.
+- **fetch:** get information about the changes while pull applying those changes. 
+- Each repository has one _master_ branch and can have several other branches. Other branches can merge to master branch.
+- **Gitkraken:** is a software like github desktop with more visualization of branches. It can work for both Github and Bitbucket.
+- **pull request:** A repository can be shared with several members. If you are a member, you will use merge to combine a branch with master branch. If a user is not a member, then that person needs to use pull request instead of merge.
+- **fork** works like _branch_ when we are not a member of a repository. 
+- Note that unless our code is not complete we do not commit to master branch. 
+
+# Github Students Developer Pack Benefits:
+- [[Github student developer pack]] (https://education.github.com/pack)
+- Free for Students. 
+- Having unlimited private repositories. 
+- So many free software.
+
