@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <link href="https://fonts.googleapis.com/css?family=Maven+Pro:400,500&amp;subset=latin-ext,vietnamese" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Dancing+Script:400,700&amp;subset=vietnamese" rel="stylesheet">
+  <meta name="google-site-verification" content="8zqeFQNuNAWS7ye6oN69hdEeYC_RsDyAlhht79xtAQo" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:image" content="/training-notes/assets/img/banner.png" />
+
+  
+
+  <title>
+    
+      How to use HPC Clusters - Basics | TrAC Training Notes
+    
+  </title>
+
+  
+
+  <!-- page's cover -->
+  
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1234">
+    <meta property="og:image:height" content="592">
+  
+
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+  
+
+  <link rel="shortcut icon" type="image/x-icon" href="/training-notes/assets/img/favicon.ico">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="/training-notes/assets/css/main.css">
+  <link rel="stylesheet" href="/training-notes/assets/css/thi_scss.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;400;600&display=swap" rel="stylesheet"> 
+
+  
+    
+      <link rel="stylesheet" href="/training-notes/assets/css/post.css">
+    
+  
+
+  
+
+  <link rel="stylesheet" href="/training-notes/assets/css/syntax.css">
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/training-notes/feed.xml">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="/training-notes/sitemap.xml">
+  
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v3.9.2" />
+<meta property="og:title" content="How to use HPC Clusters - Basics" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="tocIn this post" />
+<meta property="og:description" content="tocIn this post" />
+<link rel="canonical" href="/training-notes/Cluster-Basics" />
+<meta property="og:url" content="/training-notes/Cluster-Basics" />
+<meta property="og:site_name" content="TrAC Training Notes" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-06-24T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="How to use HPC Clusters - Basics" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-06-24T00:00:00+00:00","datePublished":"2022-06-24T00:00:00+00:00","description":"tocIn this post","headline":"How to use HPC Clusters - Basics","mainEntityOfPage":{"@type":"WebPage","@id":"/training-notes/Cluster-Basics"},"url":"/training-notes/Cluster-Basics"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+<body>
+	<header>
+  
+    <div class="container">
+  <a href="#" data-activates="slide-out" class="button-collapse top-nav full hide-on-large-only">
+    <i class="material-icons">menu</i>
+  </a>
+</div>
+<div id="slide-out" class="side-nav fixed">
+  <div>
+    <div class="userView thi-userView">
+      <div class="background"></div>
+        <a href="/training-notes/">
+          <img style="display:inherit;" class="circle z-depth-2" src="/training-notes/assets/img/napkins.png">
+        </a>
+      <span style="font-size: larger;" class="white-text name">TranslationalAICenterISU/training-notes</span>
+      <span class="white-text email"><a style="color: #bdbdbd;" href="https://github.com/TranslationalAICenterISU/training-notes"></a></span>
+    </div>
+  </div>
+  <div style="padding: 10px;">
+    <form action="/training-notes/search" method="get">
+      <input class="search-sidebar" type="search" name="q"  placeholder="search something?" autofocus>
+      <input type="submit" value="Search" style="display: none;">
+    </form>
+  </div>
+  <div id="toc-bar">
+    <div class="toc-bar-title">
+      In this post
+    </div>
+    <ol id="toc-sidebar">
+  <li><a href="#what-is-a-cluster-">What is a Cluster ?</a></li>
+  <li><a href="#tidbits">Tidbits</a></li>
+  <li><a href="#steps-to-connect-to-cluster">Steps to Connect to Cluster</a></li>
+  <li><a href="#basics-of-handling-cluster">Basics of handling cluster</a></li>
+  <li><a href="#virtual-environments">Virtual Environments</a></li>
+</ol>
+  </div>
+</div>
+
+  
+</header>
+<main>
+  <div class="container">
+    <div id="post-info">
+      <h3>How to use HPC Clusters - Basics</h3>
+      <span>
+        Posted on
+        <span style="display: initial;" class="cat-class">24/06/2022</span>
+        
+          
+          
+        
+      </span>
+    </div>
+
+    <div class="divider"></div>
+    <div class="row thi-post">
+      <div class="col s12">
+        <div id="toc">
+  <div class="toc-title">
+    <i class="material-icons mat-icon">toc</i><span>In this post</span>
+  </div>
+  <div id="full">
+<ul id="markdown-toc">
+  <li><a href="#what-is-a-cluster-" id="markdown-toc-what-is-a-cluster-">What is a Cluster ?</a></li>
+  <li><a href="#tidbits" id="markdown-toc-tidbits">Tidbits</a></li>
+  <li><a href="#steps-to-connect-to-cluster" id="markdown-toc-steps-to-connect-to-cluster">Steps to Connect to Cluster</a></li>
+  <li><a href="#basics-of-handling-cluster" id="markdown-toc-basics-of-handling-cluster">Basics of handling cluster</a></li>
+  <li><a href="#virtual-environments" id="markdown-toc-virtual-environments">Virtual Environments</a></li>
+</ul>
+
+  </div>
+</div>
+
+<h1 id="what-is-a-cluster-">What is a Cluster ?</h1>
+
+<ol>
+  <li>Several computers put together where, each computer is a node is called a <a href="https://en.wikipedia.org/wiki/Computer_cluster">cluster</a>.</li>
+</ol>
+
+<h1 id="tidbits">Tidbits</h1>
+
+<ol>
+  <li>For all the information about clusters at the ISU, visit <a href="https://www.hpc.iastate.edu/">here</a>.</li>
+  <li>You can look up the specifications of all the clusters available for us <a href="https://www.hpc.iastate.edu/systems">here</a>.</li>
+  <li>There are a few non-ISU clusters that could be made available to us (Anvil, Bridge, Expanse, etc). Aditya Balu has access to a lot of the clusters available through <a href="https://www.xsede.org/">XSEDE</a>. Contact him if you need more resources.</li>
+</ol>
+
+<h1 id="steps-to-connect-to-cluster">Steps to Connect to Cluster</h1>
+
+<ol>
+  <li>Connect to the VPN if not on the same network as the cluster.</li>
+  <li>Use the command enclosed by “&lt;&gt;”. &lt; ssh netid@clusteradress &gt;
+    <ol>
+      <li>Example for Nova users (Due to bias) - &lt; ssh isu_net_id@nova.its.iastate.edu &gt;</li>
+    </ol>
+  </li>
+  <li>If 2-factor authentication is enabled for the accessing any cluster, you will need to input the authentication code followed by your password to gain access.</li>
+</ol>
+
+<h1 id="basics-of-handling-cluster">Basics of handling cluster</h1>
+
+<ol>
+  <li><strong>NEVER</strong> run any <strong>code/command</strong> that take more than <strong>30 secs</strong> to execute on the <strong>login node</strong>. Use compute nodes in such cases. ISU <a href="https://www.hpc.iastate.edu/guides/condo-2017/managing-jobs-using-slurm-workload-manager">HPC</a> website has the necessary commands.</li>
+  <li>Use <strong>**“</strong>tmux**” to ensure safety of your work progress on cluster. Read more about tmux <a href="https://leimao.github.io/blog/Tmux-Tutorial/">here</a>.</li>
+  <li>Use virtual environments for different projects.</li>
+  <li>Use “<strong>version control”</strong> like git to better manage code development.</li>
+  <li>Check for <a href="https://hpc-wiki.info/hpc/Modules">modules</a> that are loaded on the cluster. Basic commands to handle modules are given below.
+    <ol>
+      <li>&lt; module list &gt; → shows currently loaded modules</li>
+      <li>&lt; module spider “library” &gt; → search for all available versions of the “library” that can be loaded. Example : &lt; module spider python &gt;.</li>
+      <li>&lt; module load “library” &gt; → self-explanatory. Use the exact name of the version you want. (Copy the version name from the list you get after using &lt; module spider &gt;).</li>
+      <li>&lt; module purge &gt;</li>
+    </ol>
+  </li>
+  <li>Use “alias” for the most used commands. <strong>Example</strong> → you can assign path shortcuts to speed up navigation across various folders on the cluster. Create “alias” inside “.bashrc”. Read more about “alias” <a href="https://alvinalexander.com/blog/post/linux-unix/create-aliases/">here</a>.
+    <ol>
+      <li>From your home directory → Use command &lt; vi .bashrc &gt; or &lt; vim ~/.bashrc &gt;</li>
+      <li>Use &lt; i &gt; to start editing inside the vim / vi editor. Read more about editors <a href="https://www.geeksforgeeks.org/getting-started-with-vim-editor-in-linux/">here</a>.</li>
+      <li>Add &lt; alias = “cd /work/baskarg/aapowadi” &gt; and save the file using &lt; Esc key, :wq, enter key&gt;</li>
+      <li></li>
+    </ol>
+  </li>
+  <li>Use &lt; which “library/software” &gt; to check the <strong>location</strong> of the library/software you are currently using.</li>
+</ol>
+
+<h1 id="virtual-environments">Virtual Environments</h1>
+
+<blockquote>
+  <p>Why Virtual Environment ? → Different projects may need different versions of libraries and to avoid conflict in such cases, we use virtual environment. Read more about virtual environments <a href="https://www.geeksforgeeks.org/python-virtual-environment/">here</a>.</p>
+
+</blockquote>
+
+<p><strong>Creating Virtual Environments</strong></p>
+
+<ol>
+  <li>Go to a folder of your choice.</li>
+  <li>Use &lt; virtualenv -p python “name” &gt;. “name” is adequately to avoid confusion.</li>
+</ol>
+
+<p><strong>Activating and Deactivating Virtual Environments</strong></p>
+
+<ol>
+  <li>Go to the folder where you installed the virtual environment (alias could be used).</li>
+  <li>
+    <p>Use &lt; source bin/activate &gt; to activate the virtual environment. If successfully activated, the environment name will pop up on your next command line as shown below. (”multimae” is the name of the virtual env).</p>
+
+    <p><img src="https://github.com/adityabalu/training-notes/raw/main/assets/img/command_prompt.png" alt="Screen Shot 2022-07-01 at 11.10.47.png" /></p>
+  </li>
+  <li>You could also activate virtual environment from any location.                                             Use &lt; source path/to/bin/activate &gt;.</li>
+  <li>Use &lt; deactivate &gt; to deactivate the virtual environment.</li>
+</ol>
+
+<p><strong>Installing Libraries Inside the Virtual Environment</strong></p>
+
+<ol>
+  <li>Use &lt; pip list &gt; to check out all the installed libraries inside the virtual environment.</li>
+  <li>Use &lt; pip install “library_name” &gt; to install libraries. Google “pip install library” to find the right name to use.</li>
+</ol>
+
+      </div>
+    </div>
+
+    <div class="tag-list">
+      
+      
+      
+      <a class="tag-chip" href="/training-notes/tags#hpc_cap"><div class="chip z-depth-1">HPC</div></a>
+      
+      
+      
+      <a class="tag-chip" href="/training-notes/tags#linux"><div class="chip z-depth-1">linux</div></a>
+      
+      
+      
+      <a class="tag-chip" href="/training-notes/tags#cluster"><div class="chip z-depth-1">cluster</div></a>
+      
+      
+      
+      <a class="tag-chip" href="/training-notes/tags#nova"><div class="chip z-depth-1">nova</div></a>
+      
+    </div>
+    <style type="text/css">
+.related-posts{
+  border: 3px dotted #2e87e7;
+  border-radius: 5px;
+  margin: 20px 0;
+  padding: 10px 10px 0 10px;
+}
+.related-posts span{
+  font-size: 130%;
+  font-weight: 500;
+  color: #2e87e7;
+}
+.related-posts ul{
+  margin-top: 5px!important;
+}
+.thi-icon{
+  float: left;
+  line-height: inherit;
+  margin-right: 5px;
+  margin-left: 2px;
+  color: #2e87e7;
+}
+</style>
+
+<div class="related-posts">
+  <i class="material-icons thi-icon">grade</i><span>Related Notes</span>
+  
+  <ul>
+    
+    
+      
+      
+        
+      
+        
+      
+        
+      
+    
+      
+      
+        
+      
+    
+
+    
+    
+      
+        
+
+        
+        
+          
+        
+          
+        
+          
+        
+        
+          
+          <li>
+            <a href="/training-notes/containers">
+                Containers - Introduction
+            </a>
+            <small>17 Jun 2022</small>
+          </li>
+        
+      
+        
+
+        
+        
+          
+        
+        
+          
+          <li>
+            <a href="/training-notes/how-to-write-notes">
+                How to write notes
+            </a>
+            <small>27 Nov 2020</small>
+          </li>
+        
+      
+    
+  </ul>
+</div>
+
+    <form action="/training-notes/search" method="get">
+	<input type="search" name="q"  placeholder="Search for..." autofocus>
+	<input type="submit" value="Search" style="display: none;">
+</form>
+
+  </div>
+</main>
+
+	<script src="/training-notes/assets/js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript">
+  jQuery(document).ready(function($){
+    // browser window scroll (in pixels) after which the "back to top" link is shown
+    var offset = 300,
+      //browser window scroll (in pixels) after which the "back to top" link opacity is reduced
+      offset_opacity = 1200,
+      //duration of the top scrolling animation (in ms)
+      scroll_top_duration = 700,
+      //grab the "back to top" link
+      $back_to_top = $('.cd-top');
+
+    //hide or show the "back to top" link
+    $(window).scroll(function(){
+      ( $(this).scrollTop() > offset ) ? $back_to_top.addClass('cd-is-visible') : $back_to_top.removeClass('cd-is-visible cd-fade-out');
+      // if( $(this).scrollTop() > offset_opacity ) { 
+      //  $back_to_top.addClass('cd-fade-out');
+      // }
+    });
+
+    //smooth scroll to top
+    $back_to_top.on('click', function(event){
+      event.preventDefault();
+      $('body,html').animate({
+        scrollTop: 0 ,
+        }, scroll_top_duration
+      );
+    });
+
+  });
+</script>
+<style type="text/css">
+.cd-top {
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  position: fixed;
+  bottom: 2%;
+  right: 2%;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  /* image replacement properties */
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+  background: #bbb url(/training-notes/assets/img/cd-top-arrow.svg) no-repeat center 50%;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: opacity .3s 0s, visibility 0s .3s;
+  -moz-transition: opacity .3s 0s, visibility 0s .3s;
+  transition: opacity .3s 0s, visibility 0s .3s;
+}
+.cd-top.cd-is-visible, .cd-top.cd-fade-out, .no-touch .cd-top:hover {
+  -webkit-transition: opacity .3s 0s, visibility 0s 0s;
+  -moz-transition: opacity .3s 0s, visibility 0s 0s;
+  transition: opacity .3s 0s, visibility 0s 0s;
+}
+.cd-top.cd-is-visible {
+  /* the button becomes visible */
+  visibility: visible;
+  opacity: 1;
+}
+.cd-top.cd-fade-out {
+  /* if the user keeps scrolling down, the button is out of focus and becomes less visible */
+  opacity: .5;
+}
+.no-touch .cd-top:hover {
+  background-color: #e86256;
+  opacity: 1;
+}
+</style>
+
+<a href="#0" class="cd-top">Top</a>
+
+	<footer class="page-footer teal">
+  <div class="footer-copyright">
+    <div class="container text-white">
+          <a class="waves-effect" href="/training-notes/tags">Tags</a> | <a class="waves-effect" href="/training-notes/categories">Categories</a> | <a class="waves-effect" href="https://github.com/TranslationalAICenterISU/training-notes">GitHub</a>
+    </div>
+  </div>
+</footer>
+
+<script src="//code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+
+
+  
+    <script src="/training-notes/assets/js/post.js"></script>
+  
+
+
+
+<script src="/training-notes/assets/js/main.js"></script>
+
+</body>
+</html>

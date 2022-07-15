@@ -1,24 +1,62 @@
----
-layout: null
----
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>{{ site.title | xml_escape }}</title>
-    <description>{{ site.description | xml_escape }}</description>
-    <link>{{ site.url }}</link>
-    <atom:link href="{{ site.url }}/feed.xml" rel="self" type="application/rss+xml" />
-    {% for post in site.posts limit:20 %}
+    <title>TrAC Training Notes</title>
+    <description>This blog will contain training notes for all the things not taught in any course and is difficult to learn from online.</description>
+    <link></link>
+    <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
+    
       <item>
-        <title>{{ post.title | xml_escape }}</title>
+        <title>How to use HPC Clusters - Basics</title>
         <description>
-          {% if post.subtitle %}{{ post.subtitle | xml_escape }} - {% endif %}
-          {{ post.content | strip_html | xml_escape | truncatewords: 50 }}
+          
+          tocIn this post What is a Cluster ? Tidbits Steps to Connect to Cluster Basics of handling cluster Virtual Environments What is a Cluster ? Several computers put together where, each computer is a node is called a cluster. Tidbits For all the information about clusters at the ISU, visit...
         </description>
-        <pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
-        <link>{{ site.url }}{{ post.url }}</link>
-        <guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>
+        <pubDate>Fri, 24 Jun 2022 00:00:00 +0000</pubDate>
+        <link>/Cluster-Basics</link>
+        <guid isPermaLink="true">/Cluster-Basics</guid>
       </item>
-    {% endfor %}
+    
+      <item>
+        <title>Containers - Introduction</title>
+        <description>
+          
+          
+  
+    tocIn this post
+  
+  
+
+  Containers
+
+
+  
+
+
+@Souradeep to fill in details here…
+
+Containers
+
+What are they?
+
+Why do we need it?
+
+        </description>
+        <pubDate>Fri, 17 Jun 2022 00:00:00 +0000</pubDate>
+        <link>/containers</link>
+        <guid isPermaLink="true">/containers</guid>
+      </item>
+    
+      <item>
+        <title>How to write notes</title>
+        <description>
+          
+          tocIn this post Front Matter Code Syntax highlighting Keyboard Insert a figure Standard Inline Insert an video from Youtube For writing posts Remove heading numbering Manually assign an id for a heading Insert toc (Table of Contents) Make a list into columns Insert a read-more link Insert steps Mathematical expressions...
+        </description>
+        <pubDate>Fri, 27 Nov 2020 00:00:00 +0000</pubDate>
+        <link>/how-to-write-notes</link>
+        <guid isPermaLink="true">/how-to-write-notes</guid>
+      </item>
+    
   </channel>
 </rss>
